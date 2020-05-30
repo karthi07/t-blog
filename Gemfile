@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+gem 'fast_jsonapi'
+
 gem "figaro"
 
 # Use Active Storage variant
