@@ -27,7 +27,9 @@ module Api
 
       def update
         post = Post.find_by(slug: params[:slug])
-        if post.update(post_params)
+        if post.user_id != current_user.id
+          render json: {error: "Post can be updated by created user only"}, status: 422
+        elsif post.update(post_params)
           render json: PostSerializer.new(post).serialized_json
         else
           render json: {error: post.errors.messages}, status: 422

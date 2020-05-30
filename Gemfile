@@ -28,6 +28,8 @@ gem 'fast_jsonapi'
 
 gem "figaro"
 
+gem 'devise-jwt', '~> 0.6.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
