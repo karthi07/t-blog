@@ -19,12 +19,10 @@ const Posts = () => {
   });
 
   return (
-    <div className="header">
+    <div className="blog-container">
       <h1> T Blog </h1>
-      <div className="show-posts">
-        <div> This is list of Posts </div>
-        {list}
-      </div>
+      <div> This is list of Posts </div>
+      <div className="row my-4 show-posts ">{list}</div>
     </div>
   );
 };
