@@ -1,0 +1,32 @@
+import React, { useState, useEffect, Fragment } from "react";
+import axios from "axios";
+import Post from "./Post";
+
+const Posts = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/v1/posts.json")
+      .then((resp) => {
+        setPosts(resp.data.data);
+      })
+      .catch((resp) => console.log(resp));
+  }, [posts.length]);
+
+  const list = posts.map((item) => {
+    return <Post key={item.attributes.title} attributes={item.attributes} />;
+  });
+
+  return (
+    <div className="header">
+      <h1> T Blog </h1>
+      <div className="show-posts">
+        <div> This is list of Posts </div>
+        {list}
+      </div>
+    </div>
+  );
+};
+
+export default Posts;
