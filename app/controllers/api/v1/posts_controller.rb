@@ -1,11 +1,16 @@
 module Api
   module V1
     class PostsController < ApplicationController
-      #before_action :authenticate_user!, only: %i[create update destroy]
-      protect_from_forgery with: :null_session
+      before_action :authenticate_user!, only: %i[create show get_user_post update destroy]
 
       def index
         posts = Post.all
+
+        render json: PostSerializer.new(posts).serialized_json
+      end
+
+      def get_user_post
+        posts = current_user.posts
 
         render json: PostSerializer.new(posts).serialized_json
       end
