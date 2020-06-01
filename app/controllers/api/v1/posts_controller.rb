@@ -1,7 +1,7 @@
 module Api
   module V1
     class PostsController < ApplicationController
-      before_action :authenticate_user!, only: %i[create show get_user_post update destroy]
+      before_action :authenticate_user!, only: %i[create get_user_post update destroy]
 
       def index
         posts = Post.all

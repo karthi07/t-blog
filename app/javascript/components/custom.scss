@@ -73,9 +73,22 @@ h6 {
 .h-250 {
   height: 250px;
 }
+
+@media (min-width: 576px) {
+  .blog-post {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
 @media (min-width: 768px) {
   .h-md-250 {
     height: 250px;
+  }
+
+  .blog-post {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
   }
 }
 
