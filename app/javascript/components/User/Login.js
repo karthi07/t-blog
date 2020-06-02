@@ -4,19 +4,6 @@ import axios from "axios";
 
 const Login = (props) => {
   const [user, setUser] = useState([]);
-  // const [post, setPost] = useState([]);
-  // const [loaded, setLoaded] = useState(false);
-
-  // useEffect(() => {
-  //   const url = "/login";
-  //   axios
-  //     .get(url)
-  //     .then((resp) => {
-  //       setPost(resp.data.data);
-  //       setLoaded(true);
-  //     })
-  //     .catch((resp) => console.log(resp));
-  // }, []);
 
   const handleChange = (e) => {
     e.preventDefault();
